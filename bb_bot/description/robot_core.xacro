@@ -3,6 +3,7 @@
 
     <xacro:include filename="inertial_macros.xacro"/>
 
+
     <xacro:property name="chassis_length" value="0.335"/>
     <xacro:property name="chassis_width" value="0.265"/>
     <xacro:property name="chassis_height" value="0.138"/>
@@ -54,6 +55,7 @@
 
     <link name="base_footprint">
     </link>
+
 
     <!-- CHASSIS LINK -->
 
@@ -117,6 +119,8 @@
     </gazebo>
 
 
+
+
     <!-- RIGHT WHEEL LINK -->
 
     <joint name="right_wheel_joint" type="continuous">
@@ -148,7 +152,6 @@
     </gazebo>
 
 
-
     <!-- CASTER WHEEL LINK -->
 
     <joint name="caster_wheel_joint" type="fixed">
@@ -163,7 +166,7 @@
             <geometry>
                 <sphere radius="${caster_wheel_radius}"/>
             </geometry>
-            <material name="black"/>
+            <material name="white"/>
         </visual>
         <collision>
             <geometry>
@@ -176,10 +179,9 @@
     </link>
 
     <gazebo reference="caster_wheel">
-        <material>Gazebo/Black</material>
+        <material>Gazebo/White</material>
         <mu1 value="0.001"/>
         <mu2 value="0.001"/>
     </gazebo>
-
 
 </robot>
